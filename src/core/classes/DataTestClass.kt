@@ -10,6 +10,8 @@ The compiler automatically derives the following members from all properties dec
  > componentN() functions corresponding to the properties in their order of declaration;
  > copy() function.
 
+ NOTE: data class primary constructor must have only var/val type variables
+
 */
 data class DataTestClass(val id: Int, val name: String) {
 

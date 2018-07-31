@@ -3,6 +3,36 @@ package core.basics
 fun main(args: Array<String>) {
 
 
+    val b: Byte = 8
+    val s: Short = 128
+    val i: Int = 32000
+    val l: Long = 32000000 //Use 'L' postfix type to make it long without need for declaring type.
+    val f: Float = 3.14f //By default it considers double. Hence we have to specify float type 'f' or 'F'
+    val d: Double = 77.12345678
+
+    val bool: Boolean = true
+    val str: String = "Hi"
+    val char: Char = 'C'
+
+    //Mostly Every number type supports conversions:
+    val mLongValue: Long = 1_000_000
+    val mShort = mLongValue.toShort()
+    val mInt = mLongValue.toInt()
+
+    println("Long was = $mLongValue\nIts equivalent :\nshort = $mShort\nInt = $mInt")
+
+
+    //We can use underscores to make then more readable
+
+    val oneMillion = 1_000_000
+    val creditCardNumber = 1234_5678_9012_3456L
+    val socialSecurityNumber = 999_99_9999L
+    val hexBytes = 0xFF_EC_DE_5E
+    val bytes = 0b11010010_01101001_10010100_10010010
+
+    println("One Million = $oneMillion")
+
+
 }
 
 

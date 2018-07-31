@@ -31,10 +31,44 @@ fun main(args: Array<String>) {
     println(message)
 
 
+//====== IF as an EXPRESSION=============
+
+    /*
+    *  'if' can also be used as an expression
+    *   it can also be considered as replacement of ternary operator
+    *
+    *   NOTE: braces only used if body is multiline.
+    *
+    *   NOTE: 'if' used as an expression its mandatory to provide else
+    *
+    *   NOTE: statement will return 'Any' is return type in variable not specified
+    *
+    *   NOTE: 'if' if used as an expression we DO NOT use return keyword.
+    *   return will trigger return of the enclosing function
+    *
+    *   In this case, the last statement in the block will be returned as if's expression
+    *
+    * */
+
+
+    val qualifier = 2
+    val test: String = if (qualifier == 2) {
+        "A is printed"
+        "B is printed"
+        "C is printed"
+    } else if (qualifier == 1) {
+        "D is printed"
+    } else {
+        "E is printed"
+    }
+
+    println("if as an expression returns = $test")
+
+
 //============= WHEN EXPRESSION ==============================
 /*
- *when matches its argument against all branches sequentially until some branch condition is satisfied.
- *when can be used either as an expression or as a statement.
+ * when matches its argument against all branches sequentially until some branch condition is satisfied.
+ * when can be used either as an expression or as a statement.
  * If it is used as an expression, the value of the satisfied branch becomes the value of the overall expression.
  * If it is used as a statement, the values of individual branches are ignored. (Just like with if, each branch can be a block, and its value is the value of the last expression in the block.)
  */
@@ -94,6 +128,15 @@ fun main(args: Array<String>) {
     }
 
 
+    //Another possibility is to check that a value 'is' or '!is' of a particular type
+    fun hasPrefix(x: Any) = when (x) {
+        is String -> x.startsWith("prefix") //due to smart cast
+        is Int -> x.toString() //Not returning any thing, just a test condition
+        is Double -> x.toString()
+        else -> false
+    }
+
+
     //when can also be used in case of 'if'
     //Is is preferred ??
     when {
@@ -104,8 +147,6 @@ fun main(args: Array<String>) {
 
 
     //======================================================
-
-
 
 
     //Conditions are even predefined in Collections
@@ -119,8 +160,6 @@ fun main(args: Array<String>) {
     numbers.removeIf(Predicate { it % 2 == 0 })
 
     println(numbers)
-
-
 
 
     //Using streams
